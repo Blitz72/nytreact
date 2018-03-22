@@ -1,28 +1,43 @@
 import React from "react";
 import { Container, Row, Col } from "../Grid";
-import Button from "../Button"
+import API from "../../utils/API";
+import Button from "../Button";
+// import axios from "axios";
 
-// RecipeListItem renders a bootstrap list item containing data from the recipe api call
+// ArticleListItem renders a bootstrap list item containing data from the article api call
+// export class ArticleListItem extends Component {
 export const ArticleListItem = props => (
-  <li className="list-group-item">
-    <Container>
-      <Row>
-        <Col size="xs-9 sm-10">
-          <h3>{props.title}</h3>
-          <p>Snippet: {props.snippet}</p>
-          <p>Published on {props.pub_date}</p>
-          <a rel="noreferrer noopener" target="_blank" href={props.href}>Go to article!</a>
-        </Col>
-        <Col size="xs-3 sm-2">
-          <Button
-            href="/api/saved"
-            type="success"
-            className="input-lg"
-          >
-            Save
-          </Button>
-        </Col>
-      </Row>
-    </Container>
-  </li>
-);
+
+  // constructor(props) {
+  //   super(props);    
+
+  // handleSavedArticle = article => {
+  //   API.saveArticle(article);
+  // }
+
+  // render() {
+
+      <li className="list-group-item">
+        <Container>
+          <Row>
+            <Col size="xs-9 sm-10">
+              <h3>{props.title}</h3>
+              <p>Snippet: {props.snippet}</p>
+              <p>Published on {props.pub_date}</p>
+              <a rel="noreferrer noopener" target="_blank" href={props.href}>Go to article!</a>
+            </Col>
+            <Col size="xs-3 sm-2">
+              <Button
+                onClick={this.handleSavedArticle}
+                type="primary"
+                className="input-lg btn-primary"
+              >
+                Save
+              </Button>
+            </Col>
+          </Row>
+        </Container>
+      </li>
+    );
+
+

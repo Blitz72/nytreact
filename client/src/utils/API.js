@@ -5,7 +5,7 @@ import axios from "axios";
 export default {
   getArticles: function(query) {
   	console.log("query in getArticles: ", query);
-    return axios.get("/api/articles", { params: { q: query } });
+    return axios.get("api/articles", { params: { q: query } });
   },
 
   getSavedArticles: function() {

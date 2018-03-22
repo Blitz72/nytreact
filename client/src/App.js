@@ -33,11 +33,11 @@ class App extends Component {
       .catch(err => console.log(err));
   };
 
-  componentDidMount() {
-    API.getSavedArticles()
-      .then(res => this.setState({ savedArticles: res.data }))
-      .catch(err => console.log(err));
-  }
+  // componentDidMount() {
+  //   API.getSavedArticles()
+  //     .then(res => this.setState({ savedArticles: res.data }))
+  //     .catch(err => console.log(err));
+  // };
 
   render() {
     return (
@@ -60,7 +60,7 @@ class App extends Component {
                     <Col size="xs-3 sm-2">
                       <Button
                         onClick={this.handleFormSubmit}
-                        type="success"
+                        type="primary"
                         className="input-lg"
                       >
                         Search
@@ -74,10 +74,32 @@ class App extends Component {
           <Row>
             <Col size="xs-12">
               {!this.state.articles.length ? (
-                <h1 className="text-center">No Articles to Display</h1>
+                <h3 className="text-center">Searched Articles Display Here</h3>
               ) : (
                 <ArticleList>
                   {this.state.articles.map(article => {
+                    return (
+                      <ArticleListItem
+                        key={article.headline.main}
+                        title={article.headline.main}
+                        href={article.web_url}
+                        snippet={article.snippet}
+                        pub_date={article.pub_date}
+                      />
+                    );
+                  })}
+                </ArticleList>
+              )}
+            </Col>
+          </Row>
+          <h1>Saved Articles:</h1>
+          <Row>
+            <Col size="xs-12">
+              {!this.state.savedArticles.length ? (
+                <h3 className="text-center">Saved Articles Display Here</h3>
+              ) : (
+                <ArticleList>
+                  {this.state.savedArticles.map(article => {
                     return (
                       <ArticleListItem
                         key={article.headline.main}

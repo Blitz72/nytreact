@@ -6,9 +6,9 @@ const articleSchema = new Schema({
   snippet: { type: String, required: true },
   web_url: { type: String, required: true },
   pub_date: { type: String, required: true },
-  saved: {type: Boolean, default: false}
+  // saved: {type: Boolean, default: false}
 });
 
-const Article = mongoose.model("Book", articleSchema);
+const Article = mongoose.model("Article", articleSchema);
 
 module.exports = Article;
