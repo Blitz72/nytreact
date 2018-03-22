@@ -37,7 +37,7 @@ class App extends Component {
   //   API.getSavedArticles()
   //     .then(res => this.setState({ savedArticles: res.data }))
   //     .catch(err => console.log(err));
-  // };
+  // }
 
   render() {
     return (
@@ -85,6 +85,7 @@ class App extends Component {
                         href={article.web_url}
                         snippet={article.snippet}
                         pub_date={article.pub_date}
+                        button_text={"Sweet"}
                       />
                     );
                   })}

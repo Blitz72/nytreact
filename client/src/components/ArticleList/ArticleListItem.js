@@ -1,3 +1,4 @@
+// import React, { Component } from "react";
 import React from "react";
 import { Container, Row, Col } from "../Grid";
 import API from "../../utils/API";
@@ -5,18 +6,18 @@ import Button from "../Button";
 // import axios from "axios";
 
 // ArticleListItem renders a bootstrap list item containing data from the article api call
-// export class ArticleListItem extends Component {
+// class ArticleListItem extends Component {
 export const ArticleListItem = props => (
 
   // constructor(props) {
-  //   super(props);    
+  //   super(props);
 
-  // handleSavedArticle = article => {
+  // this.handleSavedArticle = article => {
   //   API.saveArticle(article);
-  // }
+  // },
 
   // render() {
-
+    // return (
       <li className="list-group-item">
         <Container>
           <Row>
@@ -28,7 +29,7 @@ export const ArticleListItem = props => (
             </Col>
             <Col size="xs-3 sm-2">
               <Button
-                onClick={this.handleSavedArticle}
+                // onClick={this.handleSavedArticle(this.props)}
                 type="primary"
                 className="input-lg btn-primary"
               >
@@ -38,6 +39,12 @@ export const ArticleListItem = props => (
           </Row>
         </Container>
       </li>
-    );
+    // )
+  // }
+// }
+// }
+);
+
+// export default ArticleListItem;
 
 
